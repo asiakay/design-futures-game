@@ -34,3 +34,97 @@ body {
 .choice-button:hover {
   background-color: #005a9e;
 }
+
+#progress-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.step {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #333;
+}
+
+.step.active {
+  background-color: #0078d4;
+  color: white;
+}
+
+.step.completed {
+  background-color: #4caf50;
+  color: white;
+}
+
+#design-thinking-tracker {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.stage {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.stage:hover {
+  transform: scale(1.05);
+}
+
+.stage[data-stage="Empathize"],
+.stage[data-stage="Define"],
+.stage[data-stage="Ideate"] {
+  background-color: #4CAF50; /* green */
+}
+
+.stage[data-stage="Prototype"] {
+  background-color: #2196F3; /* blue */
+}
+
+.stage[data-stage="Test"] {
+  background-color: #9E9E9E; /* gray */
+}
+
+.stage.completed {
+  box-shadow: 0 0 10px 2px gold;
+}
+
+/* Add to style.css */
+#progress-tracker {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.step {
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+.feedback-message {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0078d4;
+  padding: 10px;
+  margin: 10px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.feedback-summary {
+  background-color: #e8f4fc;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
