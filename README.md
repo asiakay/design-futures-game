@@ -1,48 +1,112 @@
-# Hello website!
+# Design Futures: Greater Boston
 
-This is a basic HTML starter project you can build on however you like. No need to save. While you develop your site, your changes will happen ✨ immediately in the preview window. On the left you'll see the files that make up your site, including HTML, JavaScript, and CSS. You can upload assets like images or audio in `assets`. The rest is up to you and your imagination. 🦄
+![Game Screenshot](/screenshot.png) *Example screenshot (add your actual screenshot path)*
 
-_Last updated: 28 Feb 2023_
+An interactive game that teaches design thinking principles through solving real-world challenges in Greater Boston's communities.
 
-## What's in this project?
+## Table of Contents
+- [About](#about)
+- [Features](#features)
+- [How to Play](#how-to-play)
+- [Design Thinking Framework](#design-thinking-framework)
+- [Installation](#installation)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
-← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
+## About
 
-← `index.html`: This is the main web page for your site. The HTML defines the structure and content of the page using _elements_. You'll see references in the HTML to the JS and CSS files. Try clicking the image in the center of the page!
+Design Futures: Greater Boston is a browser-based educational game that:
+- Simulates the process of addressing complex social challenges
+- Focuses on closing the racial wealth gap in Boston
+- Teaches human-centered design and systems thinking
+- Provides branching narratives based on player choices
 
-← `style.css`: CSS files add styling rules to your content. The CSS applies styles to the elements in your HTML page. The style rules also make the image move when you click it.
+## Features
 
-← `script.js`: If you're feeling fancy you can add interactivity to your site with JavaScript. The code in the JavaScript file runs when the page loads, and when the visitor clicks the button you can add using the code in the TODO.
+- **Interactive Scenarios**: Make choices that affect outcomes
+- **Progress Tracking**: Visualize your movement through design stages
+- **Feedback System**: Learn from immediate choice consequences
+- **Multiple Endings**: Discover different solution pathways
+- **Real-World Context**: Based on actual Boston community challenges
 
-Open each file and check out the comments (in gray) for more info.
+## How to Play
 
-## Try this next 🏗️
+1. Read each scenario carefully
+2. Consider the design thinking principles
+3. Choose your approach
+4. See the consequences of your decisions
+5. Iterate and try different paths
 
-Take a look in `TODO.md` for next steps you can try out in your new site!
+Game stages follow the design thinking process:
+1. Empathize with community members
+2. Define systemic problems
+3. Ideate potential solutions
+4. Prototype interventions
+5. Test and refine approaches
 
-___Want a minimal version of this project to build your own website? Check out [Blank Website](https://glitch.com/edit/#!/remix/glitch-blank-website)!___
+## Design Thinking Framework
 
-## Ready to share your site?
+The game models the five stages of design thinking:
 
-Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
+| Stage | Focus | In-Game Example |
+|-------|-------|-----------------|
+| Empathize | Understanding needs | Interviewing local entrepreneurs |
+| Define | Articulating problems | Identifying banking barriers |
+| Ideate | Generating solutions | Brainstorming lending alternatives |
+| Prototype | Building to learn | Creating app mockups |
+| Test | Gathering feedback | Piloting in neighborhoods |
 
+## Installation
+
+To run locally:
+
+```bash
+git clone https://github.com/asiakay/design-futures-game.git
+cd design-futures-game
+# Open index.html in your browser
 ```
-<link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-<meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta name="robots" content="index,follow" />
-<meta property="og:title" content="Hello World!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-<meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"/>
-<meta name="twitter:card" content="summary" />
-```
+## Development 
 
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
+File Structure
 
-## You built this with Glitch!
+```Ascii
+.
+├── index.html         # Main game file
+├── style.css          # Game styling
+├── script.js          # Game logic and content
+├── assets/            # Images/screenshots
+│   └── screenshot.png
+└── README.md
 
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
+``` 
 
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+## To modify:
+
+1. Edit `gameData` in `script.js` for new content
+
+2. Update CSS for styling changes
+
+3. Add HTML elements as needed
+
+## Contributing
+
+We welcome contributions! Please:
+
+1. Open an Issue to discuss changes
+
+2. Fork the repository
+
+3. Submit Pull Requests to main branch
+
+Current Needs:
+
+- Additional Boston-specific scenarios
+
+- Enhanced accessibility features
+
+- Improved mobile responsiveness
+
+# License
+
+MIT License © 2025 Civic Ascent
