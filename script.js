@@ -80,96 +80,164 @@ const gameData = {
     { text: "A map of local lenders and advisors.", next: "testAppMap" }
   ]
 },
-  prototypeCampaign: {
-  text: "You design a campaign to teach financial literacy in high schools. What’s your first step?",
-  choices: [
-    { text: "Partner with local educators.", next: "testCampaignEducators" },
-    { text: "Launch a social media awareness drive.", next: "testCampaignSocial" }
-  ]
-},
-  partner: {
-  text: "You reach out to a local nonprofit already working on wealth equity. They’re excited to collaborate. What do you offer?",
-  choices: [
-    { text: "Tech support to improve their outreach.", next: "testPartnerTech" },
-    { text: "Help organizing a community event.", next: "testPartnerEvent" }
-  ]
-},
-  newInitiative: {
-  text: "You gather community input and co-design a new initiative focused on cooperative housing. What’s your launch strategy?",
-  choices: [
-    { text: "Pilot in one neighborhood.", next: "testInitiativePilot" },
-    { text: "Apply for city funding and scale fast.", next: "testInitiativeScale" }
-  ]
-},
+ prototypeCampaign: {
+    text: "You design a campaign to teach financial literacy in high schools. What's your first step?",
+    choices: [
+      { 
+        text: "Partner with local educators.", 
+        next: "testCampaignEducators",
+        feedback: "Good choice! Partnering with educators ensures relevance to student needs."
+      },
+      { 
+        text: "Launch a social media awareness drive.", 
+        next: "testCampaignSocial",
+        feedback: "Social media reaches wide audiences but may lack depth without educator input."
+      }
+    ]
+  },
+
+  // Enhanced test scenes with feedback metrics
+  testCampaignEducators: {
+    text: "Teachers help tailor the curriculum to student needs. The pilot program shows promising engagement, but scaling will require more resources.",
+    feedback: {
+      empathy: 3,
+      systemsThinking: 2,
+      iteration: 1
+    },
+    choices: [
+      { 
+        text: "Seek funding to expand the program", 
+        next: "testInitiativeScale",
+        feedback: "Scaling requires balancing growth with maintaining quality."
+      },
+      { 
+        text: "Refine the curriculum further", 
+        next: "refineModel",
+        feedback: "Iterative improvement leads to more sustainable solutions."
+      }
+    ]
+  },
+
+  testCampaignSocial: {
+    text: "Your viral campaign reaches thousands, but educators note it lacks depth for classroom use. How do you respond?",
+    feedback: {
+      empathy: 1,
+      systemsThinking: 2,
+      iteration: 3
+    },
+    choices: [
+      { 
+        text: "Partner with educators to add substance", 
+        next: "testCampaignEducators",
+        feedback: "Combining reach with depth creates more impact."
+      },
+      { 
+        text: "Focus on awareness and leave education to others", 
+        next: "feedbackScale",
+        feedback: "Specialization has value, but integrated approaches often work best."
+      }
+    ]
+  },
   testAppTrust: {
-  text: "Users love the trust-based score, but some worry about bias. You iterate based on feedback. Great job applying systems thinking!",
-  choices: [{ text: "Play again", next: "start" }]
-},
-  testInitiativePilot: {
-  text: "You launch the pilot in Roxbury. Community members are enthusiastic, and early results show promise. You gather feedback and prepare to expand.",
+  text: "Your trust-based scoring system helps reduce bias in lending decisions, but some community members worry about how the algorithm works.",
   choices: [
-    { text: "Apply for city funding to scale.", next: "testInitiativeScale" },
-    { text: "Refine the model with more community input.", next: "refineModel" }
+    { 
+      text: "Make the algorithm more transparent", 
+      next: "transparentAlgorithm",
+      feedback: "Transparency builds trust in new systems."
+    },
+    { 
+      text: "Add human oversight to the process", 
+      next: "humanOversight",
+      feedback: "Combining tech with human judgment often works best."
+    }
   ]
 },
-  testInitiativeScale: {
-  text: "You secure city funding and expand to three neighborhoods. However, without refining the model, some communities feel left out. What do you do?",
+
+// New scenes to continue the story
+transparentAlgorithm: {
+  text: "You publish your algorithm's logic and hold community workshops to explain it. Trust increases, and lenders report better outcomes.",
   choices: [
-    { text: "Pause expansion and re-engage communities.", next: "refineModel" },
-    { text: "Continue scaling and address issues later.", next: "feedbackScale" }
+    { 
+      text: "Expand to more neighborhoods", 
+      next: "scaleSuccess",
+      feedback: "Successful pilots deserve expansion with community input."
+    },
+    { 
+      text: "Document the process for other cities", 
+      next: "documentProcess",
+      feedback: "Sharing knowledge multiplies impact."
+    }
   ]
 },
-  refineModel: {
-  text: "You hold listening sessions and adapt the initiative to better meet local needs. Trust grows, and the model becomes a blueprint for other cities.",
+
+humanOversight: {
+  text: "You train community members to review algorithmic decisions. This hybrid approach catches edge cases and builds local capacity.",
   choices: [
-    { text: "Celebrate your success and restart the game.", next: "start" }
+    { 
+      text: "Develop a training program for more reviewers", 
+      next: "scaleSuccess",
+      feedback: "Investing in people creates sustainable systems."
+    },
+    { 
+      text: "Refine the algorithm based on human insights", 
+      next: "refineModel",
+      feedback: "Human feedback improves machine systems."
+    }
   ]
 },
-  
-feedbackScale: {
-  text: "Some communities disengage due to lack of inclusion. You learn the importance of iterative design and community feedback.",
-  choices: [
-    { text: "Restart and try a different approach.", next: "start" }
-  ]
-},
-// Add these new scenes to your gameData object
-testPartnerTech: {
-  text: "You develop a digital platform that helps the nonprofit track engagement and measure impact. The partnership creates new opportunities for underserved entrepreneurs.",
+
+scaleSuccess: {
+  text: "Your expanded program shows promising results across multiple neighborhoods. The model is attracting attention from city officials.",
   choices: [
-    { text: "Continue expanding this partnership", next: "refineModel" },
-    { text: "Start over with new approach", next: "start" }
+    { 
+      text: "Present to the city council for support", 
+      next: "cityCouncil",
+      feedback: "Policy support can create lasting change."
+    },
+    { 
+      text: "Keep focus on community-level growth", 
+      next: "communityFocus",
+      feedback: "Grassroots solutions often work best."
+    }
   ]
 },
-testPartnerEvent: {
-  text: "The community event brings together local business owners, lenders, and policymakers. Important connections are made, but sustaining the momentum will require follow-up.",
+
+// Additional scenes to continue the narrative
+cityCouncil: {
+  text: "The city adopts your model as part of its economic development strategy, providing funding for citywide implementation.",
   choices: [
-    { text: "Plan follow-up meetings", next: "refineModel" },
-    { text: "Try a different approach", next: "start" }
-  ]
-}, 
-   testCampaignEducators: {
-  text: "Teachers help tailor the curriculum to student needs. The pilot program shows promising engagement, but scaling will require more resources.",
-  choices: [
-    { text: "Seek funding to expand the program", next: "testInitiativeScale" },
-    { text: "Refine the curriculum further", next: "refineModel" }
+    { text: "Celebrate this systemic change!", next: "start" }
   ]
 },
-testCampaignSocial: {
-  text: "Your viral campaign reaches thousands, but educators note it lacks depth for classroom use. How do you respond?",
+
+communityFocus: {
+  text: "By growing organically, your solution maintains strong community roots while gradually expanding its impact.",
   choices: [
-    { text: "Partner with educators to add substance", next: "testCampaignEducators" },
-    { text: "Focus on awareness and leave education to others", next: "feedbackScale" }
+    { text: "Continue this successful approach", next: "start" }
+  ]
+},
+
+documentProcess: {
+  text: "Your open-source toolkit helps five other cities launch similar programs, creating a national movement for fair lending.",
+  choices: [
+    { text: "Restart to try a different approach", next: "start" }
   ]
 }
 }
-
-
-
 
 function showScene(sceneKey) {
   const scene = gameData[sceneKey];
   storyText.textContent = scene.text;
   choices.innerHTML = '';
+  
+  // Add feedback display if available
+  if (scene.feedback) {
+    const feedbackDiv = document.createElement('div');
+    feedbackDiv.className = 'feedback-message';
+    feedbackDiv.textContent = scene.feedback;
+    storyText.appendChild(feedbackDiv);
+  }
   
   // Update progress tracker
   updateProgressTracker(sceneKey);
